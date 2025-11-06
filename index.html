@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ro‘yxatdan o‘tish</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .form-box {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 35px 25px;
+      width: 90%;
+      max-width: 400px;
+      text-align: center;
+      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    h2 {
+      color: #fff;
+      font-weight: 600;
+      margin-bottom: 25px;
+      font-size: 22px;
+    }
+
+    .phone-group {
+      display: flex;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .phone-prefix {
+      background: rgba(0, 0, 0, 0.1);
+      padding: 14px 10px;
+      color: #333;
+      font-weight: 600;
+      user-select: none;
+      border-right: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    input {
+      width: 100%;
+      padding: 14px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      outline: none;
+    }
+
+    input[type="text"] {
+      background: rgba(255, 255, 255, 0.85);
+    }
+
+    input[type="tel"] {
+      border: none;
+      background: transparent;
+      flex: 1;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #007bff, #00c6ff);
+      color: white;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      transform: scale(1.03);
+      background: linear-gradient(135deg, #0062cc, #0099ff);
+    }
+
+    @media (max-width: 600px) {
+      .form-box {
+        padding: 30px 20px;
+      }
+      h2 {
+        font-size: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-box">
+    <h2>Ro‘yxatdan o‘tish</h2>
+    <form action="https://formspree.io/f/mqagrlda" method="POST">
+      <input type="text" name="ism" placeholder="Ismingizni kiriting" required>
+      
+      <div class="phone-group">
+        <span class="phone-prefix">+998</span>
+        <input type="tel" name="telefon" placeholder="90 123 45 67" pattern="^\d{2}\s?\d{3}\s?\d{2}\s?\d{2}$" required>
+      </div>
+
+      <button type="submit">Yuborish</button>
+    </form>
+  </div>
+
+</body>
+</html>
